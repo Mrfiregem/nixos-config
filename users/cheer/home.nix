@@ -23,7 +23,6 @@
     # GUI programs
     discord
     firefox
-    zed-editor
 
     # Games
     wheelwizard
@@ -50,6 +49,15 @@
 
         nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#delphi";
       };
+    };
+
+    # GUI code editor
+    zed-editor = {
+      enable = true;
+      extraPackages = with pkgs; [
+        nixd
+        nixfmt
+      ];
     };
   };
 
