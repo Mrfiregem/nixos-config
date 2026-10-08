@@ -24,6 +24,9 @@
     discord
     firefox
     zed-editor
+
+    # Games
+    wheelwizard
   ];
 
   # Program configurations.
