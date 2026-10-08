@@ -1,5 +1,5 @@
 # vim: et sw=2
-{ config, pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   # Home Manager boilerplate.
   home.username = "cheer";
   home.homeDirectory = "/home/cheer";
@@ -7,6 +7,8 @@
 
   # Import from reusable modules
   imports = [
+    ../../modules/home-manager/gnome.nix
+
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nushell.nix
   ];
