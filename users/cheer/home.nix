@@ -11,6 +11,9 @@
     ../../modules/home-manager/nushell.nix
   ];
 
+  # Manage XDG base directories
+  xdg.enable = true;
+
   # User packages.
   home.packages = with pkgs; [
     # CLI tools
