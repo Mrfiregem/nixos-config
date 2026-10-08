@@ -43,7 +43,15 @@
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
-      syntaxHighlighting.enable = true;
+      syntaxHighlighting = {
+        enable = true;
+        styles = {
+          command = "fg=cyan";
+          builtin = "fg=cyan,bold";
+          function = "fg=cyan,underline";
+          alias = "fg=cyan,bold,underline";
+        };
+    };
 
       shellAliases = {
         ls = "ls --classify=auto --color=auto";
