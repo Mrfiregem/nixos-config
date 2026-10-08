@@ -3,8 +3,10 @@
   programs.git = {
     enable = true;
 
-    userName = "Firegem";
-    userEmail = "5158194+Mrfiregem@users.noreply.github.com";
+    settings = {
+      user.name = "Firegem";
+      user.email = "5158194+Mrfiregem@users.noreply.github.com";
+    };
     
     # Global ignore patterns
     ignores = [
