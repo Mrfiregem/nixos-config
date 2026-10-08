@@ -8,6 +8,7 @@
   # Import from reusable modules
   imports = [
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/nushell.nix
   ];
 
   # User packages.
@@ -20,8 +21,9 @@
     ripgrep
 
     # GUI programs
-    firefox
     discord
+    firefox
+    zed-editor
   ];
 
   # Program configurations.
