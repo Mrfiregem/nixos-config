@@ -70,10 +70,29 @@
     # GUI code editor
     zed-editor = {
       enable = true;
+      extensions = [ "nix" ];
       extraPackages = with pkgs; [
         nixd
         nixfmt
       ];
+      userSettings = {
+        languages = {
+          Nix = {
+            # The Nix extension enables both by default, but
+            # we don't have nil installed so we disable it here.
+            language_servers = [
+              "!nil"
+              "nixd"
+            ];
+            formatter = {
+              external = {
+                command = "nixfmt";
+                arguments = [ ];
+              };
+            };
+          };
+        };
+      };
     };
   };
 
