@@ -64,6 +64,11 @@
             sudo nixos-rebuild --flake "$HOME/nixos-config#delphi" $action
           '';
         };
+        mkcd = {
+          description = "Create and switch to a new directory.";
+          argumentNames = "path";
+          body = "mkdir -p $path; cd $path";
+        };
       };
     };
 
