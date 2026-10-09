@@ -20,12 +20,14 @@
   home.packages = with pkgs; [
     # CLI tools
     fd
+    ffmpeg
     fzf
     htop
     neovim
     ripgrep
 
     # GUI programs
+    audacity
     discord
     firefox
 
