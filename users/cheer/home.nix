@@ -11,6 +11,8 @@
 
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nushell.nix
+
+    ../../modules/home-manager/spicetify.nix
   ];
 
   # Manage XDG base directories
