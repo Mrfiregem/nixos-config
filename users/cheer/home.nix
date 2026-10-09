@@ -28,6 +28,7 @@
   # User packages.
   home.packages = with pkgs; [
     # CLI tools
+    bat
     fd
     ffmpeg
     fzf
