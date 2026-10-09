@@ -38,6 +38,12 @@
     # Have Home Manager manage itself.
     home-manager.enable = true;
 
+    # Configure shell prompt
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
     # Zsh user configuration.
     zsh = {
       enable = true;
@@ -51,12 +57,13 @@
           function = "fg=cyan,underline";
           alias = "fg=cyan,bold,underline";
         };
-    };
+      };
 
       shellAliases = {
         ls = "ls --classify=auto --color=auto";
         ll = "ls -l";
         la = "ls -la";
+
         grep = "grep --color=auto";
         diff = "diff --color=auto";
 
