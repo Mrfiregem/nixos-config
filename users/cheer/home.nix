@@ -1,5 +1,12 @@
 # vim: et sw=2
-{ pkgs, ... }: {
+{
+  lib,
+  pkgs,
+  config,
+  nixosConfig,
+  ...
+}:
+{
   # Home Manager boilerplate.
   home.username = "cheer";
   home.homeDirectory = "/home/cheer";
@@ -93,6 +100,26 @@
               external = {
                 command = "nixfmt";
                 arguments = [ ];
+              };
+            };
+          };
+        };
+        lsp = {
+          nixd = {
+            binary = {
+              path = (lib.getExe pkgs.nixd);
+            };
+            initialization_options = {
+              formatting = {
+                command = [ "nixfmt" ];
+              };
+              options = {
+                nixos = {
+                  expr = "(builtins.getFlake \"${config.home.homeDirectory}/nixos-config\").nixosConfigurations.${nixosConfig.networking.hostName}.options";
+                };
+                home-manager = {
+                  expr = "(builtins.getFlake \"${config.home.homeDirectory}/nixos-config\").nixosConfigurations.${nixosConfig.networking.hostName}.options.home-manager.users.type.getSubOptions []";
+                };
               };
             };
           };
