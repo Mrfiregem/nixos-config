@@ -25,6 +25,8 @@
     ffmpeg
     fzf
     htop
+    lazygit
+    mpv
     neovim
     ripgrep
 
