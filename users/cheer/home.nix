@@ -45,33 +45,23 @@
     # Configure shell prompt
     starship = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
     };
 
-    # Zsh user configuration.
-    zsh = {
+    # Fish shell user configuration
+    fish = {
       enable = true;
-      enableCompletion = true;
-      autosuggestion.enable = true;
-      syntaxHighlighting = {
-        enable = true;
-        styles = {
-          command = "fg=cyan";
-          builtin = "fg=cyan,bold";
-          function = "fg=cyan,underline";
-          alias = "fg=cyan,bold,underline";
+      functions = {
+        nix-switch = {
+          description = "Rebuild the NixOS configuration flake.";
+          argumentNames = "action";
+          body = ''
+            set -q action[1]
+            or set action 'switch'
+
+            sudo nixos-rebuild --flake "$HOME/nixos-config#delphi" $action
+          '';
         };
-      };
-
-      shellAliases = {
-        ls = "ls --classify=auto --color=auto";
-        ll = "ls -l";
-        la = "ls -la";
-
-        grep = "grep --color=auto";
-        diff = "diff --color=auto";
-
-        nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config#delphi";
       };
     };
 

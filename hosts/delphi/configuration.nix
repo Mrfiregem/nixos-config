@@ -3,7 +3,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -85,15 +85,12 @@
   users.users."cheer" = {
     isNormalUser = true;
     description = "Cheer";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
-  # Enable Zsh at system level.
-  programs.zsh.enable = true;
+  # Enable Fish at system level.
+  programs.fish.enable = true;
 
   # Install firefox for all users.
   programs.firefox.enable = true;
