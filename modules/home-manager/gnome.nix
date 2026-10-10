@@ -1,10 +1,8 @@
 { ... }: {
-  dconf = {
+  imports = [ ./custom/gnome.nix ];
+
+  home.de.gnome = {
     enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        clock-format = "12h";
-      };
-    };
+    clockFormat = "12h";
   };
 }

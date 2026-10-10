@@ -20,13 +20,6 @@
       home-manager,
       ...
     }@inputs:
-    let
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      myLib = import ./lib {
-        inherit (nixpkgs) lib;
-        inherit pkgs;
-      };
-    in
     {
       nixosConfigurations = {
         delphi = nixpkgs.lib.nixosSystem {
@@ -45,7 +38,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.cheer = import ./users/cheer/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs myLib; };
+              home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.sharedModules = [
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
               ];
