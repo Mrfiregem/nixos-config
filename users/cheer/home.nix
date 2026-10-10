@@ -2,10 +2,14 @@
 {
   lib,
   pkgs,
-  config,
   nixosConfig,
   ...
 }:
+
+let
+  host = nixosConfig.networking.hostName;
+in
+
 {
   # Home Manager boilerplate.
   home.username = "cheer";
@@ -94,8 +98,8 @@
             # The Nix extension enables both by default, but
             # we don't have nil installed so we disable it here.
             language_servers = [
-              "!nil"
               "nixd"
+              "!nil"
             ];
             formatter = {
               external = {
@@ -116,10 +120,10 @@
               };
               options = {
                 nixos = {
-                  expr = "(builtins.getFlake \"${config.home.homeDirectory}/nixos-config\").nixosConfigurations.${nixosConfig.networking.hostName}.options";
+                  expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${host}.options";
                 };
                 home-manager = {
-                  expr = "(builtins.getFlake \"${config.home.homeDirectory}/nixos-config\").nixosConfigurations.${nixosConfig.networking.hostName}.options.home-manager.users.type.getSubOptions []";
+                  expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
                 };
               };
             };
