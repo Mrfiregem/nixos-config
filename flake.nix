@@ -10,6 +10,7 @@
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
@@ -21,7 +22,10 @@
     }@inputs:
     let
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      myLib = import ./lib { inherit (nixpkgs) lib; inherit pkgs; };
+      myLib = import ./lib {
+        inherit (nixpkgs) lib;
+        inherit pkgs;
+      };
     in
     {
       nixosConfigurations = {
@@ -42,6 +46,9 @@
               home-manager.useUserPackages = true;
               home-manager.users.cheer = import ./users/cheer/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs myLib; };
+              home-manager.sharedModules = [
+                inputs.nix-flatpak.homeManagerModules.nix-flatpak
+              ];
             }
           ];
         };

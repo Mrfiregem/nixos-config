@@ -38,9 +38,14 @@
     audacity
     discord
     firefox
+  ];
 
-    # Games
-    wheelwizard
+  # Ensure flatpaks are installed with nix-flatpak
+  services.flatpak.packages = [
+    {
+      appId = "io.github.TeamWheelWizard.WheelWizard";
+      origin = "flathub";
+    }
   ];
 
   # Program configurations.
