@@ -1,14 +1,5 @@
 # vim: et sw=2
-{
-  lib,
-  pkgs,
-  nixosConfig,
-  ...
-}:
-
-let
-  host = nixosConfig.networking.hostName;
-in
+{ pkgs, ... }:
 
 {
   # Home Manager boilerplate.
@@ -22,6 +13,7 @@ in
 
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/nushell.nix
+    ../../modules/home-manager/zed.nix
 
     ../../modules/home-manager/spicetify.nix
   ];
@@ -80,54 +72,6 @@ in
           description = "Create and switch to a new directory.";
           argumentNames = "path";
           body = "mkdir -p $path; cd $path";
-        };
-      };
-    };
-
-    # GUI code editor
-    zed-editor = {
-      enable = true;
-      extensions = [ "nix" ];
-      extraPackages = with pkgs; [
-        nixd
-        nixfmt
-      ];
-      userSettings = {
-        languages = {
-          Nix = {
-            # The Nix extension enables both by default, but
-            # we don't have nil installed so we disable it here.
-            language_servers = [
-              "nixd"
-              "!nil"
-            ];
-            formatter = {
-              external = {
-                command = "nixfmt";
-                arguments = [ ];
-              };
-            };
-          };
-        };
-        lsp = {
-          nixd = {
-            binary = {
-              path = (lib.getExe pkgs.nixd);
-            };
-            initialization_options = {
-              formatting = {
-                command = [ "nixfmt" ];
-              };
-              options = {
-                nixos = {
-                  expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${host}.options";
-                };
-                home-manager = {
-                  expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${host}.options.home-manager.users.type.getSubOptions []";
-                };
-              };
-            };
-          };
         };
       };
     };
