@@ -10,6 +10,9 @@
     # Use shared configs
     ../../modules/nixos/system/bootloader.nix
     ../../modules/nixos/system/i18n.nix
+
+    # Install steam and related programs.
+    ../../modules/nixos/gaming.nix
   ];
 
   # Enable the use of Nix flakes.
