@@ -38,6 +38,11 @@
     audacity
     discord
     firefox
+
+    # Art stuff
+    aseprite
+    krita
+    inkscape
   ];
 
   # Ensure flatpaks are installed with nix-flatpak
