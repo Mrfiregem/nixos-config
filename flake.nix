@@ -42,6 +42,7 @@
               home-manager.sharedModules = [
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
               ];
+              home-manager.backupFileExtension = "nixbak";
             }
           ];
         };
