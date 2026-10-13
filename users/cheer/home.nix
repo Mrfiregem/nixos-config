@@ -36,8 +36,6 @@
 
     # GUI programs
     audacity
-    discord
-    firefox
 
     # Art stuff
     aseprite
@@ -58,8 +56,14 @@
     # Have Home Manager manage itself.
     home-manager.enable = true;
 
+    # Web browser
+    firefox.enable = true;
+
     # Password manager
     keepassxc.enable = true;
+
+    # Chat program
+    discord.enable = true;
 
     # Configure shell prompt
     starship = {
