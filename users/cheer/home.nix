@@ -58,6 +58,9 @@
     # Have Home Manager manage itself.
     home-manager.enable = true;
 
+    # Password manager
+    keepassxc.enable = true;
+
     # Configure shell prompt
     starship = {
       enable = true;
