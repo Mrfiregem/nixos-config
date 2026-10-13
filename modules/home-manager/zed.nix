@@ -14,12 +14,29 @@ in
   # GUI code editor
   programs.zed-editor = {
     enable = true;
-    extensions = [ "nix" ];
+    extensions = [
+      # Styling
+      "catppuccin"
+      "material-icon-theme"
+
+      # LSP servers
+      "nix"
+    ];
     extraPackages = with pkgs; [
       nixd
       nixfmt
     ];
     userSettings = {
+      theme = {
+        mode = "system";
+        dark = "Catppuccin Macchiato";
+        light = "Catppuccin Latte";
+      };
+      icon_theme = {
+        mode = "system";
+        dark = "Material Icon Theme";
+        light = "Material Icon Theme";
+      };
       languages = {
         Nix = {
           # The Nix extension enables both by default, but
