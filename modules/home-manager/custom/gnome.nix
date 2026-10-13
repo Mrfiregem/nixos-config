@@ -52,6 +52,7 @@ in
 
     dconf.settings."org/gnome/desktop/interface".clock-format = cfg.clockFormat;
 
+    programs.gnome-shell.enable = normalizedExtensions != [];
     programs.gnome-shell.extensions = normalizedExtensions;
   };
 }
