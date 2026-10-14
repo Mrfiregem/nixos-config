@@ -1,5 +1,5 @@
 # vim: et sw=2
-{ pkgs, ... }:
+{ pkgs, nixosConfig, ... }:
 
 {
   # Home Manager boilerplate.
@@ -82,7 +82,7 @@
             set -q action[1]
             or set action 'switch'
 
-            sudo nixos-rebuild --flake "$HOME/nixos-config#delphi" $action
+            sudo nixos-rebuild --flake "$HOME/nixos-config#${nixosConfig.networking.hostname}" $action
           '';
         };
         mkcd = {
