@@ -72,7 +72,13 @@
         ui.default-command = "log";
       };
     };
+
     jjui.enable = true;
+
+    tealdeer = {
+      enable = true;
+      settings.updates.auto_update = true;
+    };
 
     # Games
     prismlauncher.enable = true;
