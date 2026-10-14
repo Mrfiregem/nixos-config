@@ -38,7 +38,15 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.cheer = import ./users/cheer/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                constants = {
+                  git = {
+                    name = "Firegem";
+                    email = "5158194+Mrfiregem@users.noreply.github.com";
+                  };
+                };
+              };
               home-manager.sharedModules = [
                 inputs.nix-flatpak.homeManagerModules.nix-flatpak
               ];

@@ -1,5 +1,5 @@
 # vim: et sw=2
-{ pkgs, nixosConfig, ... }:
+{ pkgs, nixosConfig, constants, ... }:
 
 {
   # Home Manager boilerplate.
@@ -62,7 +62,18 @@
     discord.enable = true;
 
     # CLI Apps
-    jujutsu.enable = true;
+    jujutsu = {
+      enable = true;
+      settings = {
+        user = {
+          name = constants.git.name;
+          email = constants.git.email;
+        };
+        ui = {
+          default-command = "log";
+        };
+      };
+    };
     jjui.enable = true;
 
     # Games

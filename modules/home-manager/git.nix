@@ -1,11 +1,11 @@
 # vim: et sw=2
-{ ... }: {
+{ constants, ... }: {
   programs.git = {
     enable = true;
 
     settings = {
-      user.name = "Firegem";
-      user.email = "5158194+Mrfiregem@users.noreply.github.com";
+      user.name = constants.git.name;
+      user.email = constants.git.email;
     };
 
     # Global ignore patterns
