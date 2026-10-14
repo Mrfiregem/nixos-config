@@ -3,6 +3,7 @@
 
   home.de.gnome = {
     enable = true;
+    usePointerCursor = true;
 
     clockFormat = "12h";
 
