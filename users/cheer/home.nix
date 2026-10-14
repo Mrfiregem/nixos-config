@@ -56,14 +56,17 @@
     # Have Home Manager manage itself.
     home-manager.enable = true;
 
-    # Web browser
+    # GUI Programs
     firefox.enable = true;
-
-    # Password manager
     keepassxc.enable = true;
-
-    # Chat program
     discord.enable = true;
+
+    # CLI Apps
+    jujutsu.enable = true;
+    jjui.enable = true;
+
+    # Games
+    prismlauncher.enable = true;
 
     # Configure shell prompt
     starship = {
@@ -92,9 +95,6 @@
         };
       };
     };
-
-    # Games
-    prismlauncher.enable = true;
   };
 
   # Environment variables.
