@@ -69,9 +69,7 @@
           name = constants.git.name;
           email = constants.git.email;
         };
-        ui = {
-          default-command = "log";
-        };
+        ui.default-command = "log";
       };
     };
     jjui.enable = true;
@@ -96,7 +94,7 @@
             set -q action[1]
             or set action 'switch'
 
-            sudo nixos-rebuild --flake "$HOME/nixos-config#${nixosConfig.networking.hostName}" $action
+            nixos-rebuild --sudo --flake "$HOME/nixos-config#${nixosConfig.networking.hostName}" $action
           '';
         };
         mkcd = {
