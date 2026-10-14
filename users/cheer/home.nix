@@ -92,6 +92,9 @@
         };
       };
     };
+
+    # Games
+    prismlauncher.enable = true;
   };
 
   # Environment variables.
