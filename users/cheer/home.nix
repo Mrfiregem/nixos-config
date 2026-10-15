@@ -33,6 +33,7 @@
     mpv
     neovim
     ripgrep
+    wl-clipboard
 
     # GUI programs
     audacity
