@@ -19,8 +19,9 @@ in
       "catppuccin"
       "material-icon-theme"
 
-      # LSP servers
+      # Languages
       "nix"
+      "nu"
     ];
     extraPackages = with pkgs; [
       nixd
