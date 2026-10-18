@@ -50,6 +50,10 @@
       appId = "io.github.TeamWheelWizard.WheelWizard";
       origin = "flathub";
     }
+    {
+      appId = "org.qbittorrent.qBittorrent";
+      origin = "flathub";
+    }
   ];
 
   # Program configurations.
