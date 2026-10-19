@@ -11,6 +11,9 @@
     ../../modules/nixos/system/bootloader.nix
     ../../modules/nixos/system/i18n.nix
 
+    # Install extra fonts
+    ../../modules/nixos/fonts.nix
+
     # Install steam and related programs.
     ../../modules/nixos/gaming.nix
   ];
