@@ -16,6 +16,8 @@
     ../../modules/home-manager/zed.nix
 
     ../../modules/home-manager/spicetify.nix
+
+    ../../modules/home-manager/gaming.nix
   ];
 
   # Manage XDG base directories
