@@ -43,11 +43,8 @@ in
       example = lib.literalExpression "[ pkgs.gnomeExtensions.dash-to-panel ]";
       description = "A list of Gnome extensions to install.";
     };
-    usePointerCursor = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Configure Gnome to use the cursor theme defined in `home.PointerCursor`.";
-    };
+    usePointerCursor = lib.mkEnableOption "Configure Gnome to use the cursor theme defined in `home.PointerCursor`.";
+    automaticLocation = lib.mkEnableOption "Allow programs to use your location.";
   };
 
   config = lib.mkIf cfg.enable {
@@ -56,6 +53,7 @@ in
     dconf.settings = lib.mkMerge [
       # Settings here are always applied.
       {
+	"org/gnome/system/location".enabled = cfg.automaticLocation;
         "org/gnome/desktop/interface".clock-format = cfg.clockFormat;
       }
       # These are applied only when condition is met.

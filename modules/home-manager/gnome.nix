@@ -3,8 +3,9 @@
 
   home.de.gnome = {
     enable = true;
-    usePointerCursor = true;
 
+    usePointerCursor = true;
+    automaticLocation = true;
     clockFormat = "12h";
 
     extensions = with pkgs.gnomeExtensions; [
