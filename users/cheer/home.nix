@@ -69,6 +69,12 @@
     discord.enable = true;
 
     # CLI Apps
+    helix = {
+      enable = true;
+      package = pkgs.steelix; # Enable plugin support
+      settings = { };
+    };
+
     jujutsu = {
       enable = true;
       settings = {
