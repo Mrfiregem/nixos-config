@@ -1,5 +1,10 @@
 # vim: et sw=2
-{ pkgs, nixosConfig, constants, ... }:
+{
+  pkgs,
+  nixosConfig,
+  constants,
+  ...
+}:
 
 {
   # Home Manager boilerplate.

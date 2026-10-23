@@ -53,7 +53,7 @@ in
     dconf.settings = lib.mkMerge [
       # Settings here are always applied.
       {
-	"org/gnome/system/location".enabled = cfg.automaticLocation;
+        "org/gnome/system/location".enabled = cfg.automaticLocation;
         "org/gnome/desktop/interface".clock-format = cfg.clockFormat;
       }
       # These are applied only when condition is met.
