@@ -37,9 +37,6 @@
     ripgrep
     wl-clipboard
 
-    # GUI programs
-    audacity
-
     # Art stuff
     aseprite
     krita
