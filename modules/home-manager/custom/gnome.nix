@@ -45,6 +45,25 @@ in
     };
     usePointerCursor = lib.mkEnableOption "Configure Gnome to use the cursor theme defined in `home.PointerCursor`.";
     automaticLocation = lib.mkEnableOption "Allow programs to use your location.";
+    wallpaper =
+      let
+        pathOption =
+          kind:
+          lib.mkOption {
+            type = lib.types.path;
+            description = "Path to the ${kind} theme wallpaper.";
+            example = lib.literalExpression "./imgs/bg-${kind}.png";
+          };
+      in
+      lib.mkOption {
+        type = lib.types.submodule {
+          options = {
+            enable = lib.mkEnableOption "Set light and dark background images.";
+            light = pathOption "light";
+            dark = pathOption "dark";
+          };
+        };
+      };
   };
 
   config = lib.mkIf cfg.enable {
@@ -61,6 +80,13 @@ in
         "org/gnome/desktop/interface" = {
           cursor-theme = config.home.pointerCursor.name;
           cursor-size = config.home.pointerCursor.size;
+        };
+      })
+      (lib.mkIf cfg.wallpaper.enable {
+        "org/gnome/desktop/background" = {
+          picture-uri = "file://${cfg.wallpaper.light}";
+          picture-uri-dark = "file://${cfg.wallpaper.dark}";
+          picture-options = "zoom";
         };
       })
     ];
