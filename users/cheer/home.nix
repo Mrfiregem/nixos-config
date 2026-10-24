@@ -89,8 +89,11 @@
         ui.default-command = "log";
       };
     };
-
     jjui.enable = true;
+    delta = {
+      enable = true;
+      enableJujutsuIntegration = true;
+    };
 
     tealdeer = {
       enable = true;
