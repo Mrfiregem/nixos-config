@@ -75,6 +75,7 @@
       enable = true;
       package = pkgs.steelix; # Enable plugin support
       settings = {
+        theme = "catppuccin_mocha";
         editor.cursor-shape.insert = "bar";
       };
     };

@@ -20,6 +20,7 @@ in
       "material-icon-theme"
 
       # Languages
+      "emmet"
       "nix"
       "nu"
     ];
@@ -28,6 +29,7 @@ in
       nixfmt
     ];
     userSettings = {
+      disable_ai = true;
       theme = {
         mode = "system";
         dark = "Catppuccin Macchiato";
@@ -38,6 +40,7 @@ in
         dark = "Material Icon Theme";
         light = "Material Icon Theme";
       };
+      format_on_save = "on";
       languages = {
         Nix = {
           # The Nix extension enables both by default, but
