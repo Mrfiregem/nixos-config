@@ -74,7 +74,9 @@
     helix = {
       enable = true;
       package = pkgs.steelix; # Enable plugin support
-      settings = { };
+      settings = {
+        editor.cursor-shape.insert = "bar";
+      };
     };
 
     jujutsu = {
