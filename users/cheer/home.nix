@@ -1,6 +1,7 @@
 # vim: et sw=2
 {
   pkgs,
+  config,
   nixosConfig,
   constants,
   ...
@@ -99,6 +100,21 @@
     tealdeer = {
       enable = true;
       settings.updates.auto_update = true;
+    };
+
+    gallery-dl = {
+      enable = true;
+      settings = {
+        extractor = {
+          # Where all files will be stored.
+          base-directory = "${config.home.homeDirectory}/Pictures/gallery-dl";
+          # Keep track of previously-downloaded files.
+          archive = "${config.xdg.dataHome}/gallery-dl/archive.sqlite3";
+
+          # Pull logins from browser storage.
+          cookies = [ "firefox" ];
+        };
+      };
     };
 
     # Games
