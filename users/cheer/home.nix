@@ -89,6 +89,14 @@
           email = constants.git.email;
         };
         ui.default-command = "log";
+        aliases = {
+          tug = [
+            "bookmark"
+            "advance"
+            "--to"
+            "@-"
+          ];
+        };
       };
     };
     jjui.enable = true;
