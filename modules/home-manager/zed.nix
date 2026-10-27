@@ -14,6 +14,7 @@ in
   # GUI code editor
   programs.zed-editor = {
     enable = true;
+    package = pkgs.zed-editor-fhs;
     extensions = [
       # Styling
       "catppuccin"
