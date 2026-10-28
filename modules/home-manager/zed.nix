@@ -24,6 +24,9 @@ in
       "emmet"
       "nix"
       "nu"
+
+      # Other
+      "typos"
     ];
     extraPackages = with pkgs; [
       nixd
