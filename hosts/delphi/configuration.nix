@@ -76,10 +76,14 @@
   # Install firefox for all users.
   programs.firefox.enable = true;
 
-  # Make nvim system default editor.
-  programs.neovim = {
+  # Helper command to search options and clean store.
+  programs.nh = {
     enable = true;
-    defaultEditor = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--keep 5";
+    };
   };
 
   # Allow unfree packages
