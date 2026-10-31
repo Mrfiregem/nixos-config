@@ -67,9 +67,10 @@
     home-manager.enable = true;
 
     # GUI Programs
+    discord.enable = true;
     firefox.enable = true;
     keepassxc.enable = true;
-    discord.enable = true;
+    obs-studio.enable = true;
 
     # CLI Apps
     helix = {
