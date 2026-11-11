@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   nixosConfig,
   ...
 }:
@@ -15,6 +16,7 @@ in
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor-fhs;
+
     extensions = [
       # Styling
       "catppuccin"
@@ -23,15 +25,18 @@ in
       # Languages
       "emmet"
       "nix"
-      "nu"
 
       # Other
       "typos"
-    ];
+    ]
+    ++ lib.lists.optional config.programs.nushell.enable "nu";
+
+    # Install extra programs required by extensions above.
     extraPackages = with pkgs; [
       nixd
       nixfmt
     ];
+
     userSettings = {
       disable_ai = true;
       theme = {
