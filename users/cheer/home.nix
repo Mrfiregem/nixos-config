@@ -137,7 +137,10 @@
     # Configure shell prompt
     starship = {
       enable = true;
-      enableFishIntegration = true;
+      settings = {
+        format = "$directory$vcs$cmd_duration$line_break$character";
+        vcs.order = ["jj" "git"];
+      };
     };
 
     # Fish shell user configuration
