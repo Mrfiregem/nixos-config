@@ -47,6 +47,9 @@
     aseprite
     krita
     inkscape
+
+    # Custom scripts
+    (pkgs.writers.writeNuBin "md5rename" (builtins.readFile ../../bin/md5rename.nu))
   ];
 
   # Ensure flatpaks are installed with nix-flatpak
