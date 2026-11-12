@@ -11,7 +11,7 @@
   # Home Manager boilerplate.
   home.username = "cheer";
   home.homeDirectory = "/home/cheer";
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.11";
 
   # Import from reusable modules
   imports = [
