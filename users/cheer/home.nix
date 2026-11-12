@@ -129,6 +129,8 @@
       };
     };
 
+    yt-dlp.enable = true;
+
     # Games
     prismlauncher.enable = true;
 
