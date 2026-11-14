@@ -130,7 +130,10 @@
       enable = true;
       settings = {
         format = "$directory$vcs$cmd_duration$line_break$character";
-        vcs.order = ["jj" "git"];
+        vcs.order = [
+          "jj"
+          "git"
+        ];
       };
     };
 
