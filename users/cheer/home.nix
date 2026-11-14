@@ -4,6 +4,7 @@
   config,
   nixosConfig,
   constants,
+  inputs,
   ...
 }:
 
@@ -39,7 +40,7 @@
     htop
     lazygit
     mpv
-    neovim
+    inputs.my-nvim.packages.${pkgs.stdenv.hostPlatform.system}.default
     ripgrep
     wl-clipboard
 
@@ -74,16 +75,6 @@
     firefox.enable = true;
     keepassxc.enable = true;
     obs-studio.enable = true;
-
-    # CLI Apps
-    helix = {
-      enable = true;
-      package = pkgs.steelix; # Enable plugin support
-      settings = {
-        theme = "catppuccin_mocha";
-        editor.cursor-shape.insert = "bar";
-      };
-    };
 
     jujutsu = {
       enable = true;

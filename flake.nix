@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    my-nvim = {
+      url = "github:Mrfiregem/neovim-config";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
