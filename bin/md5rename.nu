@@ -40,7 +40,7 @@ def main [
     | try { grid -s '  ' } catch { $x | to text }
     | print
 
-    input -n 1 'Rename these files? [y/N]: ' | default -e 'n' | $in starts-with y
+    try { input -n 1 'Rename these files? [y/N]: ' } | default -e 'n' | $in starts-with y
   } else { true }
 
   if not $continue {
