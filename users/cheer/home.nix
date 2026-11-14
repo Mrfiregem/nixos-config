@@ -129,7 +129,14 @@
     starship = {
       enable = true;
       settings = {
-        format = "$directory$vcs$cmd_duration$line_break$character";
+        format = pkgs.lib.concatStrings [
+          "$directory"
+          "$vcs"
+          "$nix_shell"
+          "$cmd_duration"
+          "$line_break"
+          "$character"
+        ];
         vcs.order = [
           "jj"
           "git"
