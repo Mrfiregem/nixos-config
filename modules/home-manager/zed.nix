@@ -19,6 +19,7 @@
       # Languages
       "emmet"
       "nix"
+      "tsgo"
 
       # Other
       "typos"
@@ -51,6 +52,27 @@
           language_servers = [
             "nixd"
             "!nil"
+            "..."
+          ];
+        };
+        TypeScript = {
+          language_servers = [
+            "typescript-ls"
+            "!vtsls"
+            "..."
+          ];
+        };
+        TSX = {
+          language_servers = [
+            "typescript-ls"
+            "!vtsls"
+            "..."
+          ];
+        };
+        JavaScript = {
+          language_servers = [
+            "typescript-ls"
+            "!vtsls"
             "..."
           ];
         };
