@@ -28,6 +28,7 @@
 
     # Install extra programs required by extensions above.
     extraPackages = with pkgs; [
+      typescript
       nixd
       nixfmt
     ];
