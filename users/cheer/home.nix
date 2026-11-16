@@ -76,6 +76,8 @@
     keepassxc.enable = true;
     obs-studio.enable = true;
 
+    zoxide.enable = true;
+
     jujutsu = {
       enable = true;
       settings = {
