@@ -44,6 +44,9 @@
     ripgrep
     wl-clipboard
 
+    # GUI
+    discord
+
     # Art stuff
     aseprite
     krita
@@ -71,7 +74,6 @@
     home-manager.enable = true;
 
     # GUI Programs
-    discord.enable = true;
     firefox.enable = true;
     keepassxc.enable = true;
     obs-studio.enable = true;
