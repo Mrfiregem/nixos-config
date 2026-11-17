@@ -16,6 +16,9 @@
 
     # Install steam and related programs.
     ../../modules/nixos/gaming.nix
+
+    # Set Ghostty as Gnome's terminal.
+    ../../modules/nixos/ghostty.nix
   ];
 
   # Enable the use of Nix flakes.
