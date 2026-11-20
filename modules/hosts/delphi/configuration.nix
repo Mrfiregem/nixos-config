@@ -12,6 +12,7 @@
       nixCommandFeature
 
       fontCoverage
+      ghostty
       i18nModule
       networkManager
       pipewireAudio
