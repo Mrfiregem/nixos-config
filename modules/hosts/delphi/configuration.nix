@@ -15,6 +15,7 @@
       ghostty
       i18nModule
       networkManager
+      nixTools
       pipewireAudio
       printing
       steam
