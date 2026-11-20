@@ -15,12 +15,13 @@
 
       artTools
       fishShell
-      nushell
       git
       jujutsu
       mediaTools
       neovimEditor
+      nushell
       spicetify
+      starshipPrompt
       zedEditor
     ];
 
