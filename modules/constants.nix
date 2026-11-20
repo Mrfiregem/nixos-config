@@ -7,8 +7,8 @@
       email = "5158194+Mrfiregem@users.noreply.github.com";
     };
     wallpaper = {
-      light = self + /assets/img/bg-light;
-      dark = self + /assets/img/bg-dark;
+      light = self + /assets/imgs/bg-light;
+      dark = self + /assets/imgs/bg-dark;
     };
   };
 
