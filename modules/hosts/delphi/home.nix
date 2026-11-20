@@ -15,6 +15,7 @@
 
       artTools
       fishShell
+      ghostty
       git
       jujutsu
       mediaTools
