@@ -13,6 +13,7 @@
       flatpakModule
       delphiFlatpakConfig
 
+      artTools
       fishShell
       nushell
       git

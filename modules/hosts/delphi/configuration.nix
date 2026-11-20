@@ -16,6 +16,7 @@
       networkManager
       pipewireAudio
       printing
+      steam
     ];
   };
 

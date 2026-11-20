@@ -32,6 +32,9 @@
           aliases = { };
         };
       };
+
+      # TUI program to work with git repos.
+      lazygit.enable = true;
     };
   };
 }
