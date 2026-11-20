@@ -38,6 +38,9 @@
     };
     programs.fish.enable = true;
 
+    # Since we use nix-flatpak, flatpak needs to be installed here.
+    services.flatpak.enable = true;
+
     home-manager.users."cheer" = self.modules.homeManager.delphiUser;
   };
 }
