@@ -8,6 +8,10 @@
           "jj"
           "git"
         ];
+        nix_shell = {
+          format = "via [$symbol( $name)]($style) ";
+          symbol = "";
+        };
         format = pkgs.lib.concatStrings [
           "$directory"
           "$vcs"
