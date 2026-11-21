@@ -112,11 +112,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1794765274,
-        "narHash": "sha256-w09ZtnilJS/SeDSio2pO2Tvvo2oSfmcVysvip28o1EA=",
+        "lastModified": 1795245685,
+        "narHash": "sha256-HxnJhZ4Cwei7H61cZ5Lxyxg3ks2Ft3UWD2cpCU09Qjs=",
         "owner": "Mrfiregem",
         "repo": "neovim-config",
-        "rev": "87e7deaa1d2fcab0d117b446d87d915e78dfde93",
+        "rev": "f6beedee8a4500e4e8d75f4b8d641434078afc45",
         "type": "github"
       },
       "original": {
