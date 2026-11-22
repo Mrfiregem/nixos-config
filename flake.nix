@@ -17,6 +17,8 @@
     my-nvim = {
       url = "github:Mrfiregem/neovim-config";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.import-tree.follows = "import-tree";
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
