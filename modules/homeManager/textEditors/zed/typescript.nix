@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.zed-typescriptLanguage = { pkgs, ... }: {
+  flake.modules.homeManager.zedEditor = { pkgs, ... }: {
     programs.zed-editor = {
       extensions = [ "tsgo" ];
 

@@ -1,4 +1,3 @@
-{ self, ... }:
 {
   flake.modules.homeManager.zedEditor =
     {
@@ -7,14 +6,7 @@
       pkgs,
       ...
     }:
-
     {
-      imports = with self.modules.homeManager; [
-        zed-colorscheme
-        zed-nixLanguage
-        zed-typescriptLanguage
-      ];
-
       # GUI code editor
       programs.zed-editor = {
         enable = true;
@@ -27,6 +19,12 @@
         ]
         ++ lib.lists.optional config.programs.nushell.enable "nu";
 
+        extraPackages = with pkgs; [
+          emmet-language-server
+          typos-lsp
+        ];
+
+        mutableUserSettings = false;
         userSettings = {
           disable_ai = true;
           format_on_save = "on";

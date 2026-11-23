@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.zed-nixLanguage = { pkgs, ... }: {
+  flake.modules.homeManager.zedEditor = { pkgs, ... }: {
     programs.zed-editor = {
       extensions = [ "nix" ];
 

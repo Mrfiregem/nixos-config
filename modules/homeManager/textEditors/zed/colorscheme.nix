@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.zed-colorscheme = {
+  flake.modules.homeManager.zedEditor = {
     programs.zed-editor = {
       extensions = [
         "catppuccin"
