@@ -28,6 +28,9 @@ top: {
       delta = {
         enable = true;
         enableJujutsuIntegration = true;
+        options = {
+          line-numbers = true;
+        };
       };
     };
   };
