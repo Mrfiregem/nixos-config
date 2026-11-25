@@ -6,6 +6,10 @@
       mpv.enable = true;
     };
 
-    home.packages = [ pkgs.discord ];
+    home.packages = [
+      (pkgs.discord.override {
+        withMoonlight = true;
+      })
+    ];
   };
 }
