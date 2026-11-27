@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.modules.homeManager.delphiUser = {
+  flake.modules.homeManager.delphiUser = { pkgs, ... }: {
     imports = with self.modules.homeManager; [
       gnomeModule
       xdgDirs
@@ -11,7 +11,6 @@
       plasmaCursorTheme
 
       flatpakModule
-      delphiFlatpakConfig
 
       artTools
       fishShell
@@ -33,11 +32,11 @@
 
     # Have Home Manager manage itself.
     programs.home-manager.enable = true;
-  };
 
-  flake.modules.homeManager.delphiFlatpakConfig = {
     services.flatpak.packages = [
       "io.github.TeamWheelWizard.WheelWizard"
     ];
+
+    home.packages = [ pkgs.marktext ];
   };
 }
